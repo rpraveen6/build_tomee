@@ -10,7 +10,7 @@ WORKDIR /var/tmp
 COPY Build_TOMEE.sh /var/tmp
 
 
-RUN /bin/sh -c 'chmod 755 /var/tmp/Build_TOMEE.sh;/var/tmp/Build_TOMEE.sh'
+RUN /bin/sh -c '/var/tmp/Build_TOMEE.sh'
 
 ADD webapps.tar.gz /opt/apps/middleware/apache/tomee/
 
