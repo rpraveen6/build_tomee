@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+ "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+ <taglib>
+   <tlib-version>1</tlib-version>
+   <jsp-version>1.2</jsp-version>
+   <short-name>custom</short-name>
+   <uri>http://jboss.org/customCD</uri>
+   <description>Custom tag library</description>
+   
+   <tag>
+     <name>cd</name>
+     <tag-class>org.jboss.jsf.cdmanager.CdTag</tag-class>
+     <attribute>
+       <name>cdTitle</name>
+       <required>true</required>
+       <description>Title of the cd</description>
+     </attribute>
+   </tag>
+   
+   <tag>
+     <name>mytag</name>
+     <tag-class>org.jboss.jsf.cdmanager.MyTag</tag-class>
+     <attribute>
+       <name>id</name>
+       <description>UI id</description>
+     </attribute>
+     <attribute>
+       <name>text</name>
+       <required>true</required>
+     </attribute>
+     <!-- TODO: Add the cssClass attribute, non required -->
+     <attribute>
+       <name>cssClass</name>
+       <required>false</required>
+     </attribute>
+   </tag>
+
+ </taglib>

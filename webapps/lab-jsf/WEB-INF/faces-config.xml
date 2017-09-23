@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config 
+PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+"http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+<faces-config>
+    
+   <managed-bean>
+      <managed-bean-name>collection</managed-bean-name>
+      <managed-bean-class>org.jboss.jsf.cdmanager.Collection</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+   </managed-bean>
+   
+      <lifecycle>
+      <phase-listener>org.jboss.jsf.cdmanager.PhaseTracker</phase-listener>
+   </lifecycle>
+   
+   <managed-bean>
+      <managed-bean-name>cd</managed-bean-name>
+      <managed-bean-class>org.jboss.jsf.cdmanager.Cd</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+   </managed-bean>
+      
+   <navigation-rule>
+      <navigation-case>
+         <from-outcome>added</from-outcome>
+         <to-view-id>/cdmanager.jsp</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+
+   <converter>
+      <converter-id>cddbConverter</converter-id>
+      <converter-class>org.jboss.jsf.cdmanager.CDDBConverter</converter-class>
+   </converter>
+   
+   <validator>
+      <validator-id>cddbValidator</validator-id>
+      <validator-class>org.jboss.jsf.cdmanager.CDDBValidator</validator-class>
+   </validator>
+   
+   <component>
+      <component-type>org.jboss.jsf.cdmanager.CDComponent</component-type>
+      <component-class>org.jboss.jsf.cdmanager.UICd</component-class>
+   </component>
+   
+
+   <component>
+      <component-type>org.company.myComponentRef</component-type>
+      <component-class>org.jboss.jsf.cdmanager.UIMyTag</component-class>
+   </component>
+
+</faces-config>
